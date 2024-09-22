@@ -1,0 +1,84 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 50px;
+}
+
+/* Container for the job cards */
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual job card */
+.job-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.job-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Job title and company name */
+.job-card h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.job-card p {
+  margin: 0;
+  color: #555;
+}
+
+/* Styles for the job detail page */
+.job-detail {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: white;
+  padding: 50px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-left: 10%;
+}
+
+.job-detail h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.job-detail p {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Apply button */
+button {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
