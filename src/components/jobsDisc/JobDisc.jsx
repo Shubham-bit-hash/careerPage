@@ -50,12 +50,12 @@ const JobDisc = () => {
             );
           })}
         </ul>
-        {/* <h3 className="font-semibold text-lg">Bouns Skills:</h3>
+        <h3 className="font-semibold text-lg">Bouns Skills:</h3>
         <ul className="my-4 list-disc px-16 text-gray-700 xs:px-8 md:pl-16">
           {job.bonus_skills.map((bouns) => {
             return <li key={bouns}>{bouns}</li>;
           })}
-        </ul> */}
+        </ul>
         <h3 className="font-semibold text-lg">Perks:</h3>
         <ul className="my-4 list-disc px-16 text-gray-700 xs:px-8 md:pl-16">
           {job.perks.map((perk) => {

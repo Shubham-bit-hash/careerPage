@@ -85,6 +85,7 @@ function Post({ searchInput, selectedContract, showRemoteJobs }) {
               location,
               salary,
               date,
+              type
             } = item;
             const displayTime = getTimeDifference(date);
             return (
@@ -96,7 +97,7 @@ function Post({ searchInput, selectedContract, showRemoteJobs }) {
                 workLocation={location}
                 salary={salary}
                 jobPostTime={date}
-                Contract="Intership"
+                Contract={type}
                 id={jobId}
                 link={`/job/${jobId}`}
               />
