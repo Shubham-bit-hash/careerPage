@@ -21,7 +21,7 @@ const JobDisc = () => {
 
   return (
     <section>
-      <div className=" mx-36 mt-10 xs:mx-4 xs:mt-6 md:mx-20 md:mt-10 lg:mx-36 lg:mt-10">
+      <div className=" mx-36 mt-10 xs:mx-4 xs:mt-28 md:mx-20 md:mt-32 lg:mx-36">
         <h1 className="font-semibold text-xl">Job Title: {job.title}</h1>
         {/* <p>Company: {job.company}</p> */}
         <div className="my-5">
@@ -42,9 +42,9 @@ const JobDisc = () => {
 
         <h3 className="font-semibold text-lg">Key Skills:</h3>
         <ul className="my-4 list-disc px-16 text-gray-700 xs:px-8 md:pl-16">
-          {job.skills.map((skill) => {
+          {job.skills.map((skill,index) => {
             return (
-              <li key={jobId}>
+              <li key={index}>
                 <span className="font-semibold text-semibold">{skill}</span>
               </li>
             );
@@ -52,14 +52,14 @@ const JobDisc = () => {
         </ul>
         <h3 className="font-semibold text-lg">Bouns Skills:</h3>
         <ul className="my-4 list-disc px-16 text-gray-700 xs:px-8 md:pl-16">
-          {job.bonus_skills.map((bouns) => {
-            return <li key={bouns}>{bouns}</li>;
+          {job.bonus_skills.map((bouns,index) => {
+            return <li key={index}>{bouns}</li>;
           })}
         </ul>
         <h3 className="font-semibold text-lg">Perks:</h3>
         <ul className="my-4 list-disc px-16 text-gray-700 xs:px-8 md:pl-16">
-          {job.perks.map((perk) => {
-            return <li key={perk}>{perk}</li>;
+          {job.perks.map((perk,index) => {
+            return <li key={index}>{perk}</li>;
           })}
         </ul>
         <div className="w-full m-auto flex justify-center items-center">

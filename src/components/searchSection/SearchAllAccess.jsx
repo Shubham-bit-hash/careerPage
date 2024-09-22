@@ -22,7 +22,7 @@ function SearchAllAccess() {
       >
         <img
           src={Circle}
-          className="absolute -z-[1]  -top-10 left-40 xs:top-[38px] xs:-left-[30px] md:-left-[50px] md:w-[37%] lg:-top-20 lg:left-32 lg:w-[32%]"
+          className="absolute -z-[1] -top-10 left-40 xs:w-1/2 xs:top-[38px] xs:-left-[75px] md:-top-14 md:-left-[0px] md:w-[40%] lg:-top-28 lg:left-28 lg:w-[30%] "
           alt=""
         />
         <img
