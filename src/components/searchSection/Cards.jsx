@@ -1,5 +1,6 @@
 import React from "react";
-import { IoLocationOutline } from "react-icons/io5";
+import { FaAward } from "react-icons/fa6";
+// import { IoLocationOutline } from "react-icons/io5";
 import { IoEarthOutline } from "react-icons/io5";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
 import { MdOutlineAccessTime } from "react-icons/md";
@@ -31,7 +32,7 @@ function Cards({
           <div className="mt-3 text-[#94748B] font-medium ">
             <p className="flex items-center gap-1">
               <span>
-                <IoLocationOutline />
+                <FaAward />
               </span>
               {typesLocation}
             </p>

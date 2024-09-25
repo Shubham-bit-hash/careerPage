@@ -15,11 +15,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-4 left-4 right-4 p-4 bg-white h-auto max-w-full bg-opacity-70 backdrop-blur-md border border-black flex items-center justify-between z-50 rounded-full">
+    <nav className="fixed top-4 left-4 right-4 p-4 bg-white h-16 max-w-full bg-opacity-70 backdrop-blur-md border border-black flex items-center justify-between z-50 rounded-full">
       {/* Logo or Brand Name */}
-      <div className="text-lg font-bold text-black">
+      <div className="text-lg font-bold text-black absolute right-8">
         <Link to="/">
-          <img className="h-10 w-auto" src={Logo} alt="Logo" />
+          <img className="h-10 w-28 object-cover" src={Logo} alt="Logo" />
         </Link>
       </div>
 
