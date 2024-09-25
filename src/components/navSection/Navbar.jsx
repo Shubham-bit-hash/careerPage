@@ -45,10 +45,10 @@ const Navbar = () => {
       </button> */}
 
       {/* Mobile Navigation (Hamburger Menu) */}
-      <div className="md:hidden">
-        <button onClick={toggleMenu} className="text-black focus:outline-none">
+      {/* <div className="md:hidden">
+        <button onClick={toggleMenu} className="text-black focus:outline-none"> */}
           {/* Hamburger Icon */}
-          <svg
+          {/* <svg
             className="w-6 h-6"
             fill="none"
             stroke="currentColor"
@@ -63,7 +63,7 @@ const Navbar = () => {
             />
           </svg>
         </button>
-      </div>
+      </div> */}
 
       {/* Mobile Menu (Dropdown) */}
       {isOpen && (
