@@ -86,18 +86,18 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Links (Desktop) */}
-      <div className="hidden md:flex space-x-6">
+      {/* <div className="hidden md:flex space-x-6">
         <Link to="/" className="text-black hover:text-gray-800">Home</Link>
         <Link to="/about" className="text-black hover:text-gray-800">About</Link>
         <Link to="/contact" className="text-black hover:text-gray-800">Contact</Link>
-      </div>
+      </div> */}
 
       {/* Login/Register Button */}
       <button
         onClick={handleLoginClick} // Use handler to redirect
         className="px-4 py-2 border border-black text-black bg-white rounded-full hover:bg-gray-100 transition-colors duration-300 hidden md:block"
       >
-        Login/Register
+        {/* Login/Register */}
       </button>
 
       {/* Mobile Navigation (Hamburger Menu) */}

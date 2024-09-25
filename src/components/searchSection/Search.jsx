@@ -27,7 +27,7 @@ function Search({ onFilter }) {
       <div className="border-[1px] p-3 rounded-xl bg-[#ffffffa8] backdrop-blur-index">
         <div>
           <label htmlFor="title" className="font-semibold">
-            Search
+            Find your perfect role
           </label>
           <input
             value={searchInput}
@@ -35,7 +35,7 @@ function Search({ onFilter }) {
             type="text"
             name="title"
             id="title"
-            placeholder="Title, company, etc."
+            placeholder="Search by role, Keywords, etc."
             className="border-[1px] rounded-md py-2 px-2 outline-gray-300 w-full mt-1"
           />
         </div>
