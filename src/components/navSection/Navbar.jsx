@@ -17,6 +17,9 @@ const Navbar = () => {
   return (
     <nav className="fixed top-4 left-4 right-4 p-4 bg-white h-16 max-w-full bg-opacity-70 backdrop-blur-md border border-black flex items-center justify-between z-50 rounded-full">
       {/* Logo or Brand Name */}
+      <div>
+        <h1 className="md:text-3xl md:ml-3 font-semibold xs:text-2xl">Jobs by PayME</h1>
+      </div>
       <div className="text-lg font-bold text-black absolute right-8">
         <Link to="/">
           <img className="h-10 w-28 object-cover" src={Logo} alt="Logo" />
@@ -47,8 +50,8 @@ const Navbar = () => {
       {/* Mobile Navigation (Hamburger Menu) */}
       {/* <div className="md:hidden">
         <button onClick={toggleMenu} className="text-black focus:outline-none"> */}
-          {/* Hamburger Icon */}
-          {/* <svg
+      {/* Hamburger Icon */}
+      {/* <svg
             className="w-6 h-6"
             fill="none"
             stroke="currentColor"
