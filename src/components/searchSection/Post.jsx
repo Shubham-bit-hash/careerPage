@@ -81,7 +81,7 @@ function Post({ searchInput, selectedContract, showRemoteJobs }) {
               jobId,
               // img: LaptopImg,
               title,
-              company,
+              Experience,
               location,
               salary,
               date,
@@ -93,7 +93,7 @@ function Post({ searchInput, selectedContract, showRemoteJobs }) {
                 // img={img}
                 key={jobId}
                 postName={title}
-                typesLocation={company}
+                typesLocation={Experience}
                 workLocation={location}
                 salary={salary}
                 jobPostTime={date}
