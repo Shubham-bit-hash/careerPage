@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className="fixed top-4 left-4 right-4 p-4 bg-white h-16 max-w-full bg-opacity-70 backdrop-blur-md border border-black flex items-center justify-between z-50 rounded-full">
       {/* Logo or Brand Name */}
       <div>
-        <h1 className="md:text-3xl md:ml-3 font-semibold xs:text-2xl">Jobs by PayME</h1>
+        <h1 className="md:text-lg md:ml-3 font-semibold">Jobs by PayME</h1>
       </div>
       <div className="text-lg font-bold text-black absolute right-8">
         <Link to="/">
