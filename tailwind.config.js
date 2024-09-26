@@ -6,6 +6,10 @@ export default {
       screens: {
         xs: "320px", // Custom breakpoint for extra small screens
       },
+      boxShadow:{
+
+        "custom":"0 10px 20px 0 rgba(0, 0, 0, 0.3)"
+      }
     },
   },
   plugins: [],
