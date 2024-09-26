@@ -39,7 +39,7 @@ const JobDisc = () => {
         <h1 className="font-semibold text-xl">Job Title: {job.title}</h1>
         <div className="my-5">
           <div>
-            <span className="font-medium">Company:</span> {job.company}
+            <span className="font-medium">Experience</span> {job.Experience}
           </div>
           <div>
             <span className="font-medium">Location:</span> {job.location}
