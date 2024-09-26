@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-4 left-4 right-4 p-4 bg-white h-16 max-w-full bg-opacity-70 backdrop-blur-md border border-black flex items-center justify-between z-50 rounded-full">
-      {/* Logo or Brand Name */}
+      {/* Logo or Brand Names */}
       <div>
         <h1 className="md:text-lg md:ml-3 font-semibold">Jobs by PayME</h1>
       </div>
