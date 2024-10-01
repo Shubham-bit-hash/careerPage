@@ -82,7 +82,7 @@ const JobDisc = () => {
           >
             <ButtonMailto
               label="Apply"
-              mailto={`mailto:emailjanhavitripathi@gmail.com?subject=Applying for ${job.title}&body=Dear Applicant%0D%0A%0D%0AI hope you're doing well, kindly provide the following information for our records:%0D%0A%0D%0A1.FUll Name:%0D%0A2.Phone:%0D%0A3.Links to your professional work profiles%0D%0A4.Attach An Updated Resume.%0D%0A%0D%0AWe appreciate your prompt response and look forward to reviewing your details. Please don't hesitate to reach out if you have any questions.%0D%0A%0D%0A Thank you. `}
+              mailto={`mailto:sending_resume@paymefin.tech?subject=Applying for ${job.title} And Update on Requested Information&body=Dear HR Team%0D%0A%0D%0AI hope you're doing well. as requested ,following information for your recodes:%0D%0A%0D%0A1.Full Name:%0D%0A2.Phone:%0D%0A3.Links to your professional work profiles:%0D%0A4.Atached my Updated Resume.%0D%0A%0D%0APlease feel free to reach out if you need any further information..%0D%0A%0D%0A Thank you for your time and consideration.`}
             />
           </div>
         </div>
