@@ -9,7 +9,7 @@ function Post({ searchInput, selectedContract, showRemoteJobs }) {
 
   useEffect(() => {
     fetch(
-      "https://raw.githubusercontent.com/Shubham-bit-hash/Assets/main/job_postings.json"
+      "https://raw.githubusercontent.com/Bitpayme-technology-sol/jobs/refs/heads/main/jobs.json"
     )
       .then((response) => response.json())
       .then((data) => setJobs(data))
