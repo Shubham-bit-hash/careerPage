@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 // import LaptopImg from "../../assets/laptop-computer-icon.png";
 import Cards from "./Cards";
-import { FaChevronLeft } from "react-icons/fa";
-import { FaChevronRight } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function Post({ searchInput, selectedContract, showRemoteJobs }) {
   const [jobs, setJobs] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1); // Pagination state
+  const jobsPerPage = 5;
 
+  // Fetch jobs data
   useEffect(() => {
     fetch(
       "https://raw.githubusercontent.com/Bitpayme-technology-sol/jobs/refs/heads/main/jobs.json"
@@ -24,50 +26,55 @@ function Post({ searchInput, selectedContract, showRemoteJobs }) {
         : true
     )
     .filter((item) =>
-      selectedContract ? item.Contract === selectedContract : true
+      selectedContract
+        ? item.type.toLowerCase() === selectedContract.toLowerCase()
+        : true
     )
     .filter((item) =>
       showRemoteJobs ? item.location.toLowerCase().includes("remote") : true
     );
 
-  // Pagination state
-  const [currentPage, setCurrentPage] = useState(1);
-  const jobsPerPage = 5;
+  // Reset the pagination when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchInput, selectedContract, showRemoteJobs]);
 
-  // Calculate total pages
+  // Pagination logic
   const totalPages = Math.ceil(filteredVacancies.length / jobsPerPage);
-
-  // Get current jobs based on page
   const indexOfLastJob = currentPage * jobsPerPage;
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
   const currentJobs = filteredVacancies.slice(indexOfFirstJob, indexOfLastJob);
 
-  // Handle next and previous page clicks
+  // Handle pagination buttons
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
     }
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handlePrevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
-    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Real date
-  function getTimeDifference(date) {
-    const postDate = new Date(date);
-    const today = new Date();
+  // Date formatting function
+  function getTimeDifference(postDateString) {
+    const [day, month, year] = postDateString.split("-").map(Number);
 
-    const timeDiff = today - postDate;
+    const postDate = new Date(year, month - 1, day);
+    const today = new Date(); // Current date
+
+    const timeDiff = today - postDate; // Difference in milliseconds
     const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24)); // Convert milliseconds to days
 
     if (daysDiff === 0) return "Today";
     if (daysDiff === 1) return "1 day ago";
-    if (daysDiff < 30) return `${daysDiff} days ago`;
+    if (daysDiff < 7) return `${daysDiff} days ago`;
+    if (daysDiff < 30) {
+      const weeksDiff = Math.floor(daysDiff / 7);
+      return `${weeksDiff} week${weeksDiff > 1 ? "s" : ""} ago`;
+    }
     const monthsDiff = Math.floor(daysDiff / 30);
     return `${monthsDiff} month${monthsDiff > 1 ? "s" : ""} ago`;
   }
@@ -77,26 +84,17 @@ function Post({ searchInput, selectedContract, showRemoteJobs }) {
       <div className="cards flex flex-col gap-3 h-[1000px] xs:h-[unset] lg:h-full">
         {currentJobs.length > 0 ? (
           currentJobs.map((item) => {
-            const {
-              jobId,
-              // img: LaptopImg,
-              title,
-              Experience,
-              location,
-              salary,
-              date,
-              type
-            } = item;
+            const { jobId, title, Experience, location, salary, date, type } =
+              item;
             const displayTime = getTimeDifference(date);
             return (
               <Cards
-                // img={img}
                 key={jobId}
                 postName={title}
                 typesLocation={Experience}
                 workLocation={location}
                 salary={salary}
-                jobPostTime={date}
+                jobPostTime={displayTime}
                 Contract={type}
                 id={jobId}
                 link={`/job/${jobId}`}
