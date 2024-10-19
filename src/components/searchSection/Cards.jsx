@@ -19,7 +19,8 @@ function Cards({
   return (
     <NavLink
       to={link}
-      className="flex py-6 px-5 rounded-xl justify-between  border-[1px] xs:block md:flex cursor-pointer hover:bg-[#fcfafa88] hover:scale-105 duration-500 backdrop-blur-index"
+      className="flex py-6 px-5 rounded-xl justify-between  border-[1px] xs:block md:flex cursor-pointer duration-500 backdrop-blur-index hover:bg-gray-100"
+      // hover:scale-105
     >
       <div className="h-[20vh] flex items-center gap-4 ">
         {/* <div className="">
