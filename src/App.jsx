@@ -13,7 +13,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <SearchAllAccess />,
+          element: <SearchAllAccess />
         },
         {
           path: "/job/:jobId",
