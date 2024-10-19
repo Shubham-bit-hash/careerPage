@@ -9,7 +9,7 @@ function Post({ searchInput, selectedContract, showRemoteJobs }) {
 
   useEffect(() => {
     fetch(
-      "https://raw.githubusercontent.com/Shubham-bit-hash/Assets/main/job_postings.json"
+      "https://raw.githubusercontent.com/Bitpayme-technology-sol/jobs/refs/heads/main/jobs.json"
     )
       .then((response) => response.json())
       .then((data) => setJobs(data))
@@ -74,7 +74,7 @@ function Post({ searchInput, selectedContract, showRemoteJobs }) {
 
   return (
     <section className="w-[75%] xs:w-full xs:mt-5 md:mt-0 md:w-[65%] lg:w-[75%]">
-      <div className="cards flex flex-col gap-3 h-[1000px] xs:h-[unset] lg:h-[1000px]">
+      <div className="cards flex flex-col gap-3 h-[1000px] xs:h-[unset] lg:h-full">
         {currentJobs.length > 0 ? (
           currentJobs.map((item) => {
             const {
