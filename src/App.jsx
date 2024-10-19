@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import JobForm from "./components/formSection/JobForm";
 import SearchAllAccess from "./components/searchSection/SearchAllAccess";
 import JobDisc from "./components/jobsDisc/JobDisc";
+import NotFound from "./components/notFoundPage/NotFound";
 
 function App() {
   const router = createBrowserRouter([
@@ -19,6 +20,10 @@ function App() {
           path: "/job/:jobId",
           element: <JobDisc />,
         },
+        {
+          path: "*",
+          element: <NotFound />,
+        }
       ],
     },
   ]);
