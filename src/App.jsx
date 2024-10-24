@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // import JobForm from "./components/formSection/JobForm";
 import SearchAllAccess from "./components/searchSection/SearchAllAccess";
 import JobDisc from "./components/jobsDisc/JobDisc";
-import NotFound from "./components/notFoundPage/NotFound";
+import NotFound from "./components/notFoundPage/NotFound"
 
 function App() {
   const router = createBrowserRouter([
