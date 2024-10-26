@@ -1,10 +1,10 @@
 import React from "react";
 import AppLayout from "./components/AppLayout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import JobForm from "./components/formSection/JobForm";
 import SearchAllAccess from "./components/searchSection/SearchAllAccess";
 import JobDisc from "./components/jobsDisc/JobDisc";
-import NotFound from "./components/notFoundPage/NotFound"
+import NotFound from "./components/notFoundPage/NotFound";
+import { BioProvider } from "./components/ContextAPI";
 
 function App() {
   const router = createBrowserRouter([
@@ -14,7 +14,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <SearchAllAccess />
+          element: <SearchAllAccess />,
         },
         {
           path: "/job/:jobId",
@@ -23,11 +23,15 @@ function App() {
         {
           path: "*",
           element: <NotFound />,
-        }
+        },
       ],
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <BioProvider>
+      <RouterProvider router={router} />
+    </BioProvider>
+  );
 }
 
 export default App;
