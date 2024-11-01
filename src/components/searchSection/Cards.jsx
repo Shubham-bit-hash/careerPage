@@ -31,7 +31,7 @@ function Cards({
           <img src={img} className="w-32 xs:w-28 lg:w-32" alt="laptop image" />
         </div> */}
         <div>
-          <h2 className={`text-[1.4rem] font-semibold xs:text-lg lg:text-[1.4rem] ${theme?"text-[#BE69CD]":"text-black"}`}>
+          <h2 className={`text-[1.4rem]  font-semibold xs:text-lg lg:text-[1.4rem] ${theme?"text-white":"text-black"}`}>
             {postName}
           </h2>
           <div className={`mt-3 ${theme?"text-[#d1cfcf]":"text-[#94748B]"} font-medium `}>
