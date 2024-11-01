@@ -1,10 +1,13 @@
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { BioContext } from "../ContextAPI";
 
 function Search({ onFilter }) {
   const [searchInput, setSearchInput] = useState("");
   const [selectedContract, setSelectedContract] = useState("");
   const [showRemoteJobs, setShowRemoteJobs] = useState(false);
+  const { theme, setTheme } = useContext(BioContext);
+
 
   const handleSearchInputChange = (e) => {
     setSearchInput(e.target.value);
@@ -24,9 +27,9 @@ function Search({ onFilter }) {
 
   return (
     <section className="w-[25%] xs:w-full md:w-[35%] ">
-      <div className="border-[1px] p-3 rounded-xl bg-[#ffffffa8] backdrop-blur-index">
+      <div className={`border-[1px] p-3 rounded-xl ${theme?"bg-[#212121a8] border-[#555555]":"bg-[#ffffffa8] border-gray-200"} backdrop-blur-index`}>
         <div>
-          <label htmlFor="title" className="font-semibold">
+          <label htmlFor="title" className={`font-semibold ${theme?"text-white":"text-black"}`}>
             Find your perfect role
           </label>
           <input
@@ -36,11 +39,11 @@ function Search({ onFilter }) {
             name="title"
             id="title"
             placeholder="Search by role, Keywords, etc."
-            className="border-[1px] rounded-md py-2 px-2 outline-gray-300 w-full mt-1"
+            className={`border-[1px] rounded-md py-2 px-2  w-full mt-1 ${theme?"bg-[#121212] border-[#555555] text-white":"bg-white text-black outline-gray-300"}`}
           />
         </div>
         <div className="mt-5">
-          <label htmlFor="types" className="font-semibold">
+          <label htmlFor="types" className={`font-semibold ${theme?"text-white":"text-black"}`}>
             Type
           </label>
           <select
@@ -48,7 +51,7 @@ function Search({ onFilter }) {
             id="types"
             value={selectedContract}
             onChange={handleContractChange}
-            className="border-[1px] rounded-md py-2 px-2 outline-gray-300 w-full mt-2"
+            className={`border-[1px] rounded-md py-2 px-2 w-full mt-2 ${theme?"bg-[#121212] border-[#555555] text-white":"bg-white text-black outline-gray-300"}`}
           >
             <option value="">All types</option>
             <option value="Full-time">Full-time</option>
@@ -101,11 +104,11 @@ function Search({ onFilter }) {
             onChange={handleRemoteJobsChange}
             className="mr-2"
           />
-          <label htmlFor="remoteJobs">Remote jobs</label>
+          <label htmlFor="remoteJobs" className={`font-semibold ${theme?"text-white":"text-black"}`}>Remote jobs</label>
         </div>
         <button
           onClick={handleFilter}
-          className="w-full py-2 bg-[#0F172A] text-white rounded-lg hover:bg-[#1b2742] duration-500"
+          className={`w-full py-2 ${theme?"bg-[#292929]":"bg-[#0F172A]"} text-white rounded-lg hover:bg-[#1b2742] duration-500`}
         >
           Filter jobs
         </button>

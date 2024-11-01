@@ -1,9 +1,14 @@
-import React, { useState } from "react";
-import Logo from "../../assets/BG Logo/White BG Logo.png";
-import { Link } from "react-router-dom";
+import React, { useCallback, useContext, useState } from "react";
+import LogoWhite from "../../assets/BG Logo/White BG Logo.png";
+import LogoBlack from "../../assets/BG Logo/Black BG Logo.png";
+import { IoMoonSharp } from "react-icons/io5";
+import { FaSun } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
+import { BioContext } from "../ContextAPI";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, setTheme } = useContext(BioContext);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -13,17 +18,46 @@ const Navbar = () => {
     // Redirect to external URL
     window.location.href = "https://app.paymefin.tech/";
   };
+  const handleTheme = (e) => {
+    setTheme(!theme);
+    let body = document.querySelector("body");
+    body.style.transition = "all 0.3s ease-in-out";
+    if (theme) {
+      body.style.backgroundColor = "#fff";
+    } else {
+      body.style.backgroundColor = "#121212";
+    }
+  };
 
   return (
-    <nav className="fixed top-4 left-4 right-4 p-4 bg-white h-16 max-w-full bg-opacity-70 backdrop-blur-md border border-black flex items-center justify-between z-50 rounded-full">
+    <nav
+      className={`fixed top-4 left-4 right-4 p-4 ${
+        theme ? "bg-[#292929 border-[#555555]" : "border-black bg-white"
+      } h-16 max-w-full bg-opacity-70 backdrop-blur-md border flex items-center justify-between z-50 rounded-full`}
+    >
       {/* Logo or Brand Names */}
       <div>
-        <h1 className="md:text-lg md:ml-3 font-semibold">Jobs by PayME</h1>
+        <h1
+          className={`md:text-lg md:ml-3 font-semibold ${
+            theme ? "text-white" : "text-black"
+          }`}
+        >
+          Jobs by PayME
+        </h1>
       </div>
-      <div className="text-lg font-bold text-black absolute right-8">
-        <Link to="/">
-          <img className="h-10 w-28 object-cover" src={Logo} alt="Logo" />
-        </Link>
+      <div className="flex justify-between items-center gap-10 mr-3">
+        <div className="text-3xl" onClick={handleTheme}>
+          {theme ? <IoMoonSharp className="text-white" /> : <FaSun />}
+        </div>
+        <div className="text-lg font-bold text-black">
+          <NavLink to="/">
+            <img
+              className="h-10 w-28 object-cover"
+              src={theme ? LogoBlack : LogoWhite}
+              alt="Logo"
+            />
+          </NavLink>
+        </div>
       </div>
 
       {/* Navigation Links (Desktop) */}

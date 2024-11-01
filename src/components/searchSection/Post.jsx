@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 // import LaptopImg from "../../assets/laptop-computer-icon.png";
 import Cards from "./Cards";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { BioContext } from "../ContextAPI";
 
 function Post({ searchInput, selectedContract, showRemoteJobs }) {
   const [jobs, setJobs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); // Pagination state
+  const { theme, setTheme } = useContext(BioContext);  
   const jobsPerPage = 5;
+
 
   // Fetch jobs data
   useEffect(() => {
@@ -107,7 +110,7 @@ function Post({ searchInput, selectedContract, showRemoteJobs }) {
 
         {/* Pagination Controls */}
         {filteredVacancies.length > jobsPerPage && (
-          <div className="flex justify-between mt-4">
+          <div className={`flex justify-between mt-4 ${theme?"text-white":"text-black"}`}>
             <button
               onClick={handlePrevPage}
               disabled={currentPage === 1}
